@@ -1,24 +1,4 @@
-<% if obj.errors.any? %>
-  <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
-      <div class="panel panel-danger">
-        <div class="panel-heading">
-          <h2 class="panel-title">
-            <%= pluralize(obj.errors.count, "error") %>
-              prohibited this article from being saved:
-          </h2>
-          <div class="panel-body">
-            <ul>
-            <% obj.errors.full_messages.each do |message|%>
-              <li><%= message %></li>
-              <% end %>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-<% end %>
+ <%= render 'shared/errors', obj: @article %>
 
 <div class="row">
   <div class="col-xs-12">
@@ -44,6 +24,7 @@
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
       <%= f.submit class: 'btn btn-primary btn-large' %>
+      <%= link_to 'Back', articles_path, class: "btn btn-primary btn-large" %>
     </div>
   </div>
 <% end %>
