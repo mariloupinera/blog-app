@@ -10,13 +10,11 @@
   </head>
 
   <body>
+    <%= render 'layouts/navigation' %>
+    <%= render 'shared/messages' %>
+   <!--  <%#= render 'shared/errors', obj: @article %> -->
 
     <%= yield %>
 
-    <% flash.each do |name, message| %>
-      <ul>
-        <li><%= message %></li>
-      </ul>
-    <% end %>
   </body>
 </html>
